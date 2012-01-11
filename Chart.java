@@ -18,7 +18,7 @@ public class Chart
     public String toString() {
        String rt = "";
 
-       int labelWidth = 0, dataWidth = 0;
+       int labelWidth = 1, dataWidth = 1;
        
        // calculate padding for label and data columns
        for (Map.Entry<String, String> i : data.entrySet()){

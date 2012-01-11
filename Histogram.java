@@ -1,9 +1,9 @@
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Histogram extends Chart {
 
-    private List<Integer> values;
+    private ArrayList<Integer> values;
     private int[][] ranges;
     
     /**
@@ -18,7 +18,7 @@ public class Histogram extends Chart {
         super(new String[][]{});
         
         this.ranges = ranges;
-        this.values = Arrays.asList(values);
+        this.values = new ArrayList<Integer>(Arrays.asList(values));
         generateChartRows();
     }
     

@@ -40,17 +40,25 @@ public class Histogram extends Chart {
         String[][] rows = new String[ranges.length][2];
         int i = 0;
         for (int[] range: ranges) {
-            String data = "";
+            int count = 0;
             for (int val: values) {
                 if (val <= range[1] && val >= range[0]) {
-                    data += "*";
+                    count++;
                 }
             }
-            rows[i] = new String[]{labelForRange(range), data};
+            rows[i] = new String[]{labelForRange(range), dataForCount(count)};
             i++;
         }
         orderRows(rows);
         this.setRows(rows);
+    }
+    
+    protected String dataForCount(int count) {
+        String rt = "";
+        for (int i = 0; i < count; i++) {
+            rt += "*";
+        }
+        return rt;
     }
     
     protected String labelForRange(int[] range) {
